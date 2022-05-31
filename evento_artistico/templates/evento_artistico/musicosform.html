@@ -1,0 +1,17 @@
+{% extends "evento_artistico/index.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+
+<h2>Formulario para insersión de un nuevo Musico</h2>
+<hr></hr>
+
+<form action="" method="POST">
+    {% csrf_token %}
+
+    {{ musico_form.as_p }}
+
+    <input type="submit" class="btn btn-primary" value="Ingresar Musico" />
+
+</form>
+
+{% endblock %}

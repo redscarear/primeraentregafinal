@@ -1,0 +1,19 @@
+{% extends "evento_artistico/index.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+
+<h2>Lista de Musicos</h2>
+<a class="card_custom" href="{% url 'musicosform' %}">Ingresar nuevo musico</a>
+<hr></hr>
+<ul>
+    {% for musico in musicos %}
+        <li>
+            musico: {{musico.nombre}} {{musico.apellido}}
+            -- e-mail: {{musico.email}}
+            -- instrumento: {{musico.instrumento}}
+            -- CUIL: {{musico.cuil}}
+        </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

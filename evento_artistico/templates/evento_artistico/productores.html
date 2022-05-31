@@ -1,0 +1,18 @@
+{% extends "evento_artistico/index.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+
+<h2>Lista de Productores</h2>
+<a class="card_custom" href="{% url 'productoresform' %}">Crear nuevo Productor</a>
+<hr></hr>
+<ul>
+    {% for productor in productores %}
+        <li>
+            productor: {{productor.nombre}} {{profesor.apellido}}
+            -- e-mail: {{profesor.email}}
+            -- CUIL: {{profesor.cuil}}
+        </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

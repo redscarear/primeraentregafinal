@@ -1,0 +1,18 @@
+{% extends "evento_artistico/index.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+
+<h2>Lista de Tecnicos</h2>
+<a class="card_custom" href="{% url 'tecnicosform' %}">Ingresar nuevo tecnico</a>
+<hr></hr>
+<ul>
+    {% for tecnico in tecnicos %}
+        <li>
+            tecnico: {{tecnico.nombre}} {{tecnico.apellido}}
+            -- e-mail: {{tecnico.email}}
+            -- CUIL: {{tecnico.cuil}}
+        </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

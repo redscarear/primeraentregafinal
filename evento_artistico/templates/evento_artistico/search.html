@@ -1,0 +1,37 @@
+{% extends "evento_artistico/index.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+
+<h2>Buscador de musicos</h2>
+<hr></hr>
+
+<form action="/evento_artistico/search" method="GET">
+    <div>
+        <input type="text" name="nombre" id="musico_nombre" placeholder="Busqueda por nommbre">
+        <input type="submit" value="Buscar por Nombre">
+    </div>
+    <div>
+        <input type="number" name="cuil" id="musico_cuil" placeholder="Busqueda por cuil">
+        <input type="submit" value="Buscar por cuil">
+    </div>
+    <div>
+        <input type="text" name="all_search" id="musico_cuil_nombre" placeholder="Busqueda general">
+        <input type="submit" value="Buscar">
+    </div>
+
+</form>
+
+<hr></hr>
+
+{% if musicos %}
+    <ul>
+        {% for musico in musicos %}
+            <li>
+                musico: {{musico.nombre}}
+                -- instrumento: {{musico.instrumento}}
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+{% endblock %}
